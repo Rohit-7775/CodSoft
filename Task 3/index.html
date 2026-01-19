@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mini Smart Calculator</title>
+
+<style>
+*{box-sizing:border-box;font-family:Arial}
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#1d2671,#c33764);
+}
+.calculator{
+    width:300px;
+    background:#111;
+    padding:18px;
+    border-radius:15px;
+}
+#display{
+    background:#000;
+    color:#0f0;
+    font-size:30px;
+    text-align:right;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:12px;
+}
+.buttons{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+button{
+    padding:16px;
+    border:none;
+    border-radius:10px;
+    font-size:17px;
+    cursor:pointer;
+}
+.num{background:#2c2c2c;color:#fff}
+.op{background:#ff9500;color:#fff}
+.ctrl{background:#d32f2f;color:#fff}
+.eq{background:#00c853;color:#fff;grid-column:span 2}
+</style>
+</head>
+
+<body>
+
+<div class="calculator">
+    <div id="display">0</div>
+
+    <div class="buttons">
+        <button class="ctrl">AC</button>
+        <button class="ctrl">DEL</button>
+        <button class="op">%</button>
+        <button class="op">/</button>
+
+        <button class="num">7</button>
+        <button class="num">8</button>
+        <button class="num">9</button>
+        <button class="op">*</button>
+
+        <button class="num">4</button>
+        <button class="num">5</button>
+        <button class="num">6</button>
+        <button class="op">-</button>
+
+        <button class="num">1</button>
+        <button class="num">2</button>
+        <button class="num">3</button>
+        <button class="op">+</button>
+
+        <button class="num">0</button>
+        <button class="num">.</button>
+        <button class="eq">=</button>
+    </div>
+</div>
+
+<script>
+const display = document.getElementById("display");
+
+document.querySelectorAll("button").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+        let v = btn.innerText;
+
+        if(v==="AC") display.innerText="0";
+        else if(v==="DEL") display.innerText = display.innerText.length>1 
+                ? display.innerText.slice(0,-1) : "0";
+        else if(v==="="){
+            try{ display.innerText = eval(display.innerText); }
+            catch{ display.innerText = "Error"; }
+        }
+        else display.innerText = display.innerText==="0" ? v : display.innerText+v;
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rohit Chauhan | Portfolio</title>
+
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --dark: #1f1f1f;
+            --light: #f5f7ff;
+            --text: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            background: var(--dark);
+            color: #fff;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header nav a {
+            color: #fff;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        header nav a:hover {
+            color: var(--primary);
+        }
+
+        /* FIX NAVBAR OVERLAP */
+        section {
+            padding: 70px 8%;
+            text-align: center;
+            scroll-margin-top: 90px;
+        }
+
+        /* HERO */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 80px 8%;
+            background: linear-gradient(120deg, #6c63ff, #8e88ff);
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+        }
+
+        .hero p {
+            margin: 15px 0;
+            font-size: 18px;
+        }
+
+        .hero button {
+            padding: 12px 26px;
+            background: #fff;
+            color: #6c63ff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .hero-img img {
+            width: 280px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ABOUT */
+        .about {
+            background: #fff;
+            border-radius: 20px;
+        }
+
+        .about a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 22px;
+            border-radius: 20px;
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* HIRE ME SECTION */
+        .hire-me {
+            background: linear-gradient(120deg, #6c63ff, #8e88ff);
+            color: #fff;
+            border-radius: 25px;
+        }
+
+        .hire-me button {
+            margin-top: 20px;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 30px;
+            background: #fff;
+            color: #6c63ff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* SKILLS */
+        .skill-box span {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 22px;
+            background: #fff;
+            border-radius: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-box span:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* SERVICES */
+        .services-box {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            background: #fff;
+            width: 240px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* EXPERIENCE */
+        .exp {
+            background: #fff;
+            margin: 15px auto;
+            max-width: 500px;
+            padding: 20px;
+            border-left: 5px solid var(--primary);
+            text-align: left;
+            border-radius: 10px;
+        }
+
+        /* TESTIMONIAL */
+        .testimonial {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .testimonial-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            margin: 15px auto;
+            max-width: 500px;
+            border-radius: 15px;
+            font-style: italic;
+        }
+
+        /* WORKS */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .work-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .work-card:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* BLOG */
+        .blog-post {
+            background: #fff;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: var(--dark);
+            color: #fff;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000;
+            color: #aaa;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>Online Portfolio</h2>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#services">Services</a>
+            <a href="#experience">Experience</a>
+            <a href="#testimonial">Testimonial</a>
+            <a href="#works">Works</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div>
+            <h1>Hi, I'm Rohit Chauhan👋</h1>
+            <p>Full-Stack Web Developer | MERN Stack Enthusiast
+                I build scalable, responsive, and user-friendly web applications
+                using modern technologies and clean code practices.</p>
+            <button>Hire Me</button>
+        </div>
+        <div class="hero-img">
+            <img src="images/profile1.png" alt="Profile">
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a B.Tech Information Technology student and a passionate
+            full-stack web developer with experience in HTML, CSS,
+            JavaScript, Node.js, MongoDB, and React.
+            <br><br>
+            I enjoy building responsive, scalable, and user-friendly web
+            applications while continuously improving my technical skills.
+        </p>
+        <a href="Rohit Chauhan resume.pdf" download>Download Resume</a>
+    </section>
+
+    <section class="hire-me">
+        <h2>Let’s Work Together</h2>
+        <p>
+            Open to internships, freelance projects, and full-time
+            opportunities in web development.
+        </p>
+        <button>Contact Me</button>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skill-box">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            <span>Node.js</span><span>MongoDB</span><span>React</span>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Services</h2>
+        <div class="services-box">
+            <div class="service-card">Frontend Development</div>
+            <div class="service-card">Backend Development</div>
+            <div class="service-card">UI / UX Design</div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="exp">
+            <h3>Web Developer</h3>
+            <p>2024 – Present</p>
+            <p>Developing MERN stack projects</p>
+        </div>
+        <div class="exp">
+            <h3>Intern Developer</h3>
+            <p>2023 – 2024</p>
+            <p>Frontend & backend development</p>
+        </div>
+    </section>
+
+    <section class="testimonial" id="testimonial">
+        <h2>Testimonials</h2>
+        <div class="testimonial-box">
+            "Rohit is a highly skilled and professional developer."
+        </div>
+        <div class="testimonial-box">
+            "Delivered quality work on time. Highly recommended."
+        </div>
+    </section>
+
+    <section id="works">
+        <h2>Projects</h2>
+        <div class="work-grid">
+            <div class="work-card">Tic-Tac-Project</div>
+            <div class="work-card">Travel Website</div>
+            <div class="work-card">Food recipe manager</div>
+        </div>
+    </section>
+
+    <section id="blog">
+        <h2>Blog</h2>
+        <div class="blog-post">
+            <h3>How I Started Web Development</h3>
+            <p>My journey from beginner to developer.</p>
+        </div>
+        <div class="blog-post">
+            <h3>JavaScript Tips for Beginners</h3>
+            <p>Clean coding practices and tips.</p>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: rohitchauhan7775@gmail.com</p>
+        <p>Phone: +91 8104055179</p>
+    </section>
+
+    <footer>
+        © 2026 Rohit Chauhan | All Rights Reserved
+    </footer>
+
+</body>
+
+</html>
